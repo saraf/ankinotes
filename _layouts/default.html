@@ -10,9 +10,22 @@
   <div class="container">
     <aside class="sidebar">
       <h2>{{ site.title }}</h2>
-      <form id="search-form">
-        <input type="text" id="search-box" placeholder="Search..." onkeyup="searchNotes()">
-      </form>
+      <input type="text" id="search-box" placeholder="Search..." onkeyup="searchNotes()">
+
+      <div class="tag-group-list">
+        {% assign tag_groups = site.data.tag_groups %}
+        {% for group in tag_groups %}
+          <button class="collapsible">{{ group[0] }}</button>
+          <ul class="tag-list">
+            {% for tag in group[1] %}
+              <li><a href="{{ site.baseurl }}/tags/{{ tag | slugify }}/">{{ tag }}</a></li>
+            {% endfor %}
+          </ul>
+        {% endfor %}
+      </div>
+
+      <hr>
+
       <ul id="post-list">
         {% assign sorted_posts = site.posts | sort: 'title' %}
         {% for post in sorted_posts %}
@@ -34,6 +47,36 @@
         item.style.display = text.includes(input) ? '' : 'none';
       });
     }
+
+    // Collapsible tag groups
+    const collapsibles = document.querySelectorAll(".collapsible");
+    collapsibles.forEach(function(button) {
+      button.addEventListener("click", function() {
+        this.classList.toggle("active");
+        const list = this.nextElementSibling;
+        if (list.style.display === "block") {
+          list.style.display = "none";
+        } else {
+          list.style.display = "block";
+        }
+      });
+    });
+
+    // Vim-style keyboard navigation
+    document.addEventListener("keydown", function(e) {
+      const links = Array.from(document.querySelectorAll("#post-list a"));
+      let activeIndex = links.findIndex(link => link === document.activeElement);
+
+      if (e.key === "j") {
+        e.preventDefault();
+        let next = activeIndex + 1;
+        if (next < links.length) links[next].focus();
+      } else if (e.key === "k") {
+        e.preventDefault();
+        let prev = activeIndex - 1;
+        if (prev >= 0) links[prev].focus();
+      }
+    });
   </script>
 </body>
 </html>
