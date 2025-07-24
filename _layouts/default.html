@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }} - {{ site.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body>
+  <header>
+    <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+    <form id="search-form">
+      <input type="text" id="search-box" placeholder="Search notes..." onkeyup="searchNotes()">
+    </form>
+    <hr>
+  </header>
+
+  <main id="main-content">
+    {{ content }}
+  </main>
+
+  <script>
+    function searchNotes() {
+      var input = document.getElementById('search-box').value.toLowerCase();
+      var listItems = document.querySelectorAll('#main-content li');
+      listItems.forEach(function(item) {
+        var text = item.innerText.toLowerCase();
+        item.style.display = text.includes(input) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
