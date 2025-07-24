@@ -11,11 +11,12 @@ Note - the 'Tags' do not work as of now.
 A curated knowledge base about **Spaced Repetition** and **Anki**, based on *Anki Essentials* and personal learning experiments.
 
 Explore:
-- 💡 [How to Write Good Cards](/tags/#CardDesign)
-- 🧠 [Core SRS Concepts](/tags/#CoreConcepts)
-- 🛠️ [FSRS Tips and Tools](/tags/#FSRS)
-- 📚 [Tutorials and Troubleshooting](/tags/#HowTo)
-- 📁 [Full Archive](/archive)
+- 💡 [How to Write Good Cards](/ankinotes/tags/#CardDesign)
+- 🧠 [Core SRS Concepts](/ankinotes/tags/#CoreConcepts)
+- 🛠️ [FSRS Tips and Tools](/ankinotes/tags/#FSRS)
+- 📚 [Tutorials and Troubleshooting](/ankinotes/tags/#HowTo)
+- 📁 [Full Archive](/ankinotes/archive)
 
-Start here: [Becoming an Anki Virtuoso](/2025/06/20/becoming-an-anki-virtuoso.html)
+Start here: [Becoming an Anki Virtuoso](/ankinotes/2025/06/20/becoming-an-anki-virtuoso.html)
+2025/06/20/becoming-an-anki-virtuoso.html
 
