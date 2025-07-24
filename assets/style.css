@@ -100,3 +100,17 @@ body, html {
 .content h1, .content h2, .content h3 {
   color: #1f2937;
 }
+
+
+.tag-cloud {
+  margin-top: 1rem;
+  padding: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.tag-cloud a {
+  text-decoration: none;
+  margin: 0 4px 4px 0;
+  color: #d1d5db;
+  display: inline-block;
+}

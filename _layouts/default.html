@@ -12,6 +12,12 @@
       <h2>{{ site.title }}</h2>
       <input type="text" id="search-box" placeholder="Search..." onkeyup="searchNotes()">
 
+      <label for="sort-select" style="color:#d1d5db; font-size:0.9rem;">Sort by:</label>
+      <select id="sort-select" onchange="sortPosts()">
+        <option value="title">Title (A–Z)</option>
+        <option value="date">Date (Newest)</option>
+      </select>
+
       <div class="tag-group-list">
         {% assign tag_groups = site.data.tag_groups %}
         {% for group in tag_groups %}
@@ -25,11 +31,16 @@
       </div>
 
       <hr>
+<div class="tag-cloud"><h3 style="margin-top:1.5rem;">Tag Cloud</h3>
+<a href="/ankinotes/tags/important/" style="font-size:14px">Important</a> <a href="/ankinotes/tags/studynotes/" style="font-size:14px">StudyNotes</a> <a href="/ankinotes/tags/studynotesstudytech/" style="font-size:28px">StudyNotes/StudyTech</a> <a href="/ankinotes/tags/studynoteswhiteboard/" style="font-size:14px">StudyNotes/Whiteboard</a> </div>
+<hr>
 
       <ul id="post-list">
-        {% assign sorted_posts = site.posts | sort: 'title' %}
+        {% assign sorted_posts = site.posts %}
         {% for post in sorted_posts %}
-          <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+          <li data-title="{{ post.title | downcase }}" data-date="{{ post.date | date: '%Y-%m-%d' }}">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </li>
         {% endfor %}
       </ul>
     </aside>
@@ -48,6 +59,24 @@
       });
     }
 
+    function sortPosts() {
+      const list = document.getElementById("post-list");
+      const items = Array.from(list.getElementsByTagName("li"));
+      const sortBy = document.getElementById("sort-select").value;
+
+      items.sort((a, b) => {
+        if (sortBy === "title") {
+          return a.dataset.title.localeCompare(b.dataset.title);
+        } else {
+          return b.dataset.date.localeCompare(a.dataset.date);
+        }
+      });
+
+      // Re-add sorted items
+      list.innerHTML = "";
+      items.forEach(item => list.appendChild(item));
+    }
+
     // Collapsible tag groups
     const collapsibles = document.querySelectorAll(".collapsible");
     collapsibles.forEach(function(button) {
@@ -62,7 +91,7 @@
       });
     });
 
-    // Vim-style keyboard navigation
+    // Vim-style navigation
     document.addEventListener("keydown", function(e) {
       const links = Array.from(document.querySelectorAll("#post-list a"));
       let activeIndex = links.findIndex(link => link === document.activeElement);
