@@ -55,6 +55,7 @@ This setting tweak (common in older Anki optimizations) has two interacting effe
 ---
 
 ### **The Core Conflict: Workload vs. Ultra-Long-Term Reliability**
+
 | Goal                | IM 80% + Easy 170%          | Safer Long-Term Settings (e.g., IM 100%, Easy 130%) |
 |---------------------|------------------------------|-----------------------------------------------------|
 | **Workload**        | Lower (fewer total reviews)  | Higher (more reviews of mature cards)              |
