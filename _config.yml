@@ -1,7 +1,5 @@
 title: Anki Notes
 description: Master learning with Anki and Spaced Repetition
-baseurl: "/ankinotes"
-url: "https://saraf.github.io"
 theme: minima
 plugins:
   - jekyll-feed
@@ -10,3 +8,5 @@ plugins:
   - jekyll-archives
 paginate: 10
 paginate_path: "/page:num"
+baseurl: /ankinotes
+url: https://saraf.github.io
