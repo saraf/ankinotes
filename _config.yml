@@ -10,3 +10,6 @@ paginate: 10
 paginate_path: "/page:num"
 baseurl: /ankinotes
 url: https://saraf.github.io
+markdown: kramdown
+kramdown:
+  input: GFM

@@ -8,7 +8,8 @@ title: Welcome
 Use the sidebar to browse all topics.
 Note - the 'Tags' do not work as of now.
 
-A curated knowledge base about **Spaced Repetition** and **Anki**, based on *Anki Essentials* and personal learning experiments.
+A collection of discussions with Perplexity and DeepSeek - about **Spaced Repetition** and **Anki**, based on *Anki Essentials* and personal learning experiments.
+An Anki Deck for learning shared soon on [AnkiWeb](https://ankiweb.net)
 
 Explore:
 - 📁 [Full Archive](/ankinotes/archive)
