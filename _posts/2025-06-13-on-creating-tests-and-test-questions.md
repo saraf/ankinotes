@@ -107,5 +107,3 @@ Would you like:
 * A **template** to help you craft Bloom’s-level questions easily?
 * A **short checklist** to run every test item through?
 * A **Google Sheet** format to manage internal question banks for your team?
-
-Let me know, and I’ll prepare those for you.
