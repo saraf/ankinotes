@@ -6,7 +6,7 @@ tags:
 title: Long term retention decks?
 ---
 
-# Long term retention decks - aren't *all* decks supposed to help with long term retention?
+# Long term retention decks - aren't *all* decks supposed to help with long term retention
 
 This is an **excellent** question that cuts to the heart of Anki philosophy. Let's clarify the distinction:
 
