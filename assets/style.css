@@ -114,3 +114,11 @@ body, html {
   color: #d1d5db;
   display: inline-block;
 }
+
+
+/* Ensure mermaid blocks are styled properly */
+.mermaid {
+  background-color: transparent;
+  margin: 1em 0;
+  overflow-x: auto;
+}
